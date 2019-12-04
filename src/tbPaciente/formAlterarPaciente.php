@@ -8,7 +8,7 @@
 <html>
    <head>
       <title>Cadastro de Paciente - Alteração </title>
-      <link rel="stylesheet" type="text/css"  href="../CSS/tbvacinacao.css" />
+      <link rel="stylesheet" type="text/css"  href="../css/tbvacinacao.css" />
    </head>
    <body>	
       <h1>Cadastro de Paciente - Alteração</h1>
@@ -28,7 +28,7 @@
          <input type="hidden" name="acao" value="4">
          <input type="hidden" name="id" value="<?php echo $_REQUEST["id"]?>">
          <br><br><input type="submit" value="Salvar">
-         <h3><a href='../menu.html'>Voltar para o Menu</a></h3>
+         <h3><a href='../menu.php'>Voltar para o Menu</a></h3>
       </form>
    </body>
 </html>

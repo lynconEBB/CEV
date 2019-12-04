@@ -5,7 +5,7 @@
   $num=mysqli_num_rows($query);
 
     if($num>0){
-      echo "<link rel='stylesheet' type='text/css'  href='../CSS/tbvacinacao.css' />";
+      echo "<link rel='stylesheet' type='text/css'  href='../css/tbvacinacao.css' />";
         echo "<table border=1>";
         echo "<tr>
                 <th> Codigo </th>
@@ -23,7 +23,7 @@
             </tr>";
             while($array=mysqli_fetch_object($query)){
               echo "<tr>";
-                echo "<td>".$array->IdPaciente."</td>";
+                echo "<td>".$array->id."</td>";
                 echo "<td>".$array->Email."</td>";
                 echo "<td>".$array->Nome."</td>";
                 echo "<td>".$array->DataNascimento."</td>";
@@ -35,7 +35,7 @@
                 echo "<td>".$array->Observacoes."</td>";
                 echo "<td>".$array->Rua."</td>";
                 echo "<td>
-                        <a href='formAlterarPaciente.php?id=".$array->IdPaciente."'>Alterar</a> | <a href='crudPaciente.php?acao=2&id=".$array->IdPaciente."'>Excluir</a>
+                        <a href='formAlterarPaciente.php?id=".$array->id."'>Alterar</a> | <a href='crudPaciente.php?acao=2&id=".$array->id."'>Excluir</a>
                       </td> 
               </tr>";
             }
@@ -47,5 +47,4 @@
   }else{
       echo "Não há registros no banco de dados";
   }
-  echo "<h3><a href='../menu.html'>Voltar para o Menu</a></h3>";
-?>
+  echo "<h3><a href='../menu.php'>Voltar para o Menu</a></h3>";

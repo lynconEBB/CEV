@@ -17,7 +17,7 @@
          <br>
          <input type="submit" value="Salvar">
          <br><br>
-         <h3><a href='../menu.html'>Voltar para o Menu</a></h3>
+         <h3><a href='../menu.php'>Voltar para o Menu</a></h3>
       </form>
    </body>
 </html>

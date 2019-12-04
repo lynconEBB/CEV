@@ -36,13 +36,13 @@
             </tr>";
             while($arrayVac=mysqli_fetch_object($queryVac)){
             echo "<tr>
-                <td >".$arrayVac->idVacina."</td>
-                <td >".$arrayVac->nome."</td>
+                <td >".$arrayVac->id."</td>
+                <td >".$arrayVac->Nome."</td>
                 <td >".$arrayVac->Data."</td>
             </tr>";
             }
             echo "</table>";
         ?>
-        <h3><a href="../menu.html">Voltar</a></h3>
+        <h3><a href="../menu.php">Voltar</a></h3>
    </body>
 </html>

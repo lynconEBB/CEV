@@ -1,5 +1,5 @@
 <?php
-  require_once "../conexao.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/conexao.php";
   class Crud{
      private $con;
      function __construct(){
@@ -31,16 +31,18 @@
         mysqli_query($this->con, $sql) or die (mysqli_error($this->con));
         header("Location:menuVacinacao.php");
     }
+
     function retornarNome(){
-        $sql ="select distinct Nome from tbVacinacao inner join tbpaciente on tbpaciente.idPaciente = tbvacinacao.idPaciente where tbvacinacao.idPaciente ='".$_REQUEST["idPac"]."'";
+        $sql ="select distinct Nome from tbVacinacao inner join tbPaciente on tbPaciente.id = tbVacinacao.idPaciente where tbVacinacao.idPaciente ='".$_REQUEST["idPac"]."'";
         $query=mysqli_query($this->con, $sql) or die (mysqli_error($this->con));
         return $query;
-    }  
+    }
+
     function listaPorIdPaciente(){
-        $sql = "select tbvacina.idVacina, tbvacina.nome , tbvacinacao.Data from 
-        tbvacinacao inner join tbvacina on tbvacina.idVacina = tbvacinacao.idVacina 
-        inner join tbpaciente on tbpaciente.idPaciente = tbvacinacao.idPaciente 
-        where tbvacinacao.idPaciente ='".$_REQUEST["idPac"]."'";
+        $sql = "select tbVacina.id, tbVacina.Nome , tbVacinacao.Data from 
+        tbVacinacao inner join tbVacina on tbVacina.id = tbVacinacao.idVacina 
+        inner join tbPaciente on tbPaciente.id = tbVacinacao.idPaciente 
+        where tbVacinacao.idPaciente ='".$_REQUEST["idPac"]."'";
         $query=mysqli_query($this->con, $sql) or die (mysqli_error($this->con));
         return $query;
     }

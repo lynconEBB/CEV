@@ -1,13 +1,12 @@
 <meta charset="utf-8">
-<html>
+<html lang="pt-br">
    <head>
       <title>Cadastro de Pacientes</title>
-      <link rel="stylesheet" type="text/css"  href="../CSS/tbvacinacao.css" />
+      <link rel="stylesheet" type="text/css"  href="../css/tbvacinacao.css" />
    </head>
    <body>
 	  <h1>Cadastro de Pacientes</h1> 
       <form action="crudPaciente.php" method="post" enctype="multipart/form-data">
-
          <br> Nome do Paciente:  <input type=TEXT  name= Nome>
          <br> Senha : <input type=password name=Senha>
          <br> Email : <input type= TEXT name= Email>
@@ -22,7 +21,9 @@
 
          <input type="hidden" name="acao" value="1">
          <br><br><input type="submit" value="Salvar">
-         <h3><a href='../menu.html'>Voltar para o Menu</a></h3>
+         <h3>
+             <a href='../menu.php'>Voltar para o Menu</a>
+         </h3>
       </form>
    </body>
 </html>

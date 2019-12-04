@@ -5,24 +5,31 @@
 	    header("Location: login.php");
 	    exit();
     }
-    $obj=new CrudPac();
-    $query=$obj->listar();
+
     require "tbPaciente/crudPaciente.php";
-    if($_REQUEST["action"] == "login"){
-        while($array=mysqli_fetch_object($query)){
-            if($_REQUEST["CAMPO_USUARIO"]==$array->Nome && $_REQUEST["CAMPO_SENHA"]==$array->Senha){
+    $crudPac = new CrudPac();
+    $query=$crudPac->listar();
+
+    if($_REQUEST["action"] == "login") {
+        $obj=mysqli_fetch_object($query);
+        do {
+            if($_REQUEST["CAMPO_USUARIO"]==$obj->Nome && $_REQUEST["CAMPO_SENHA"]==$obj->Senha){
                 $_SESSION["usuario"] = $_POST["CAMPO_USUARIO"];
                 $_SESSION["autenticado"] = TRUE;
                 header("Location: menu.php");
             }else{
                 echo "Seu nome de usuário ou senha estão incorretos.";
             }
-        }
+        }while($obj=mysqli_fetch_object($query));
     }else{ 
         if (isset ($_GET["acao"])){
             sair();
         }
     }
  ?>
- <html><BR><BR><a href="login.php"><<--Retornar ao login </a><BR> </html>
+ <html lang="pt-br">
+    <BR><BR>
+    <a href="login.php"><<--Retornar ao login </a>
+    <BR>
+ </html>
 

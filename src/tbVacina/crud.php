@@ -1,5 +1,5 @@
 <?php
-  require_once "../conexao.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/conexao.php";
     class Crud{
         private $con;
      function __construct(){
@@ -27,18 +27,18 @@
      }
 
     function retornarNome($id){
-        $sql="select nome from tbVacina where IdVacina=".$id ;
+        $sql="select Nome from tbVacina where id=".$id ;
         $query=mysqli_query($this->con, $sql);
         return $query;
     }
     function listaPorId(){
-      $sql="select * from tbVacina where idVacina=".$_REQUEST["id"] ;
+      $sql="select * from tbVacina where id=".$_REQUEST["id"] ;
       $query=mysqli_query($this->con, $sql);
       return $query;
     }
 
     function inserir(){
-  		$sql="insert into tbVacina(nome, Duracao, Descricao, idadeMinima, idadeMaxima) values ('".$_REQUEST["nome"]."','".$_REQUEST["Duracao"]."','".$_REQUEST["Descricao"]."','".$_REQUEST["idadeMinima"]."','".$_REQUEST["idadeMaxima"]."')";
+  		$sql="insert into tbVacina(Nome, Duracao, Descricao, idadeMinima, idadeMaxima) values ('".$_REQUEST["nome"]."','".$_REQUEST["Duracao"]."','".$_REQUEST["Descricao"]."','".$_REQUEST["idadeMinima"]."','".$_REQUEST["idadeMaxima"]."')";
       mysqli_query($this->con, $sql) or die (mysqli_error($this->con));
       header("Location:relatorioGeral.php");
     }
@@ -50,14 +50,14 @@
     }
 
     function excluir(){
-      $sql="delete from tbVacina where idVacina=".$_REQUEST["id"];
+      $sql="delete from tbVacina where id=".$_REQUEST["id"];
       $msg="Erro ao excluir o registro<hr>";
       mysqli_query($this->con, $sql)or die ($msg.mysqli_error($this->con));
       header("Location:relatorioGeral.php");
     }
 
     function alterar(){
-      $sql="update tbVacina set nome='".$_POST["nome"]."', Duracao='".$_POST["Duracao"]."', Descricao='".$_POST["Descricao"]."', idadeMinima='".$_POST["idadeMinima"]."', idadeMaxima='".$_POST["idadeMaxima"]."' where idVacina='".$_REQUEST["id"]."'";        
+      $sql="update tbVacina set Nome='".$_POST["nome"]."', Duracao='".$_POST["Duracao"]."', Descricao='".$_POST["Descricao"]."', idadeMinima='".$_POST["idadeMinima"]."', idadeMaxima='".$_POST["idadeMaxima"]."' where id='".$_REQUEST["id"]."'";
       mysqli_query($this->con, $sql) or die (mysqli_error($this->con));
       header("Location:relatorioGeral.php");   
     }

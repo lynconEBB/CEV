@@ -28,7 +28,7 @@
             </tr>";
             while($array=mysqli_fetch_object($query)){
             echo "<tr>";
-                echo "<td>".$array->IdPaciente."</td>";
+                echo "<td>".$array->id."</td>";
                 echo "<td>".$array->DataNascimento."</td>";
                 echo "<td>".$array->Cidade."</td>";
                 echo "<td>".$array->Bairro."</td>";
@@ -38,7 +38,7 @@
                 echo "<td>".$array->Numero."</td>";
                 echo "<td>".$array->Observacoes."</td>";
                 echo "<td>".$array->Rua."</td>";
-                echo "<td><a href='formInformaVacina.php?idPac=".$array->IdPaciente."'>Escolher</a></td> 
+                echo "<td><a href='formInformaVacina.php?idPac=".$array->id."'>Escolher</a></td> 
             </tr>";
             }
             echo "<table>";

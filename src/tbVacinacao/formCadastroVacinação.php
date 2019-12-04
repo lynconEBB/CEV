@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <title>Cadastro de Vacinação</title>
      <link rel="stylesheet" type="text/css"  href="../CSS/tbvacinacao.css" />
@@ -25,7 +25,7 @@
                 echo "<td>".$arrayPac->Nome."</td>";
             }
             while($arrayVac=mysqli_fetch_object($queryVac)){
-                echo "<td>".$arrayVac->nome."</td>";
+                echo "<td>".$arrayVac->Nome."</td>";
             }
                 
             echo"</tr>";

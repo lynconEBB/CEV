@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<html>
+<html lang="pt-br">
    <head>
         <title>Informar Vacina</title>
         <link rel="stylesheet" type="text/css"  href="../CSS/tbvacinacao.css" />
@@ -24,13 +24,13 @@
             </tr>";
             while($array=mysqli_fetch_object($query)){
             echo "<tr>";
-                echo "<td>".$array->idVacina."</td>";
-                echo "<td>".$array->nome."</td>";
+                echo "<td>".$array->id."</td>";
+                echo "<td>".$array->Nome."</td>";
                 echo "<td>".$array->Duracao."</td>";
                 echo "<td>".$array->Descricao."</td>";
-                echo "<td>".$array->idadeMinima."</td>";
-                echo "<td>".$array->idadeMaxima."</td>";
-                echo "<td> <a href='formCadastroVacinação.php?idVac=".$array->idVacina."&idPac=".$idPaciente."'>Escolher</a> </td> 
+                echo "<td>".$array->IdadeMinima."</td>";
+                echo "<td>".$array->IdadeMaxima."</td>";
+                echo "<td> <a href='formCadastroVacinação.php?idVac=".$array->id."&idPac=".$idPaciente."'>Escolher</a> </td> 
             </tr>";
             }
         echo "</table>";
